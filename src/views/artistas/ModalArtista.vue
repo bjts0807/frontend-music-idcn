@@ -83,8 +83,6 @@
                         confirmButtonColor: '#ff4545'
                     })
 
-                    //await Swal.fire('Datos Guardados con exito','', 'success',);
-
                     this.$emit("get-artistas");
 
                     this.modalHide();
@@ -98,8 +96,6 @@
                         icon: 'error',
                         confirmButtonColor: '#ff4545'
                     })
-                    //Swal.fire("Oops!", "ha ocurrido un error al procesar la solicitud", "error");
-                   
                 }
             },
             modalShow(){
@@ -111,7 +107,7 @@
                 let m = Modal.getInstance(myModal)
                 m.hide();
             },
-            async clear() {
+            clear() {
                 this.artista.id = "";
                 this.artista.nombre = "";
             },

@@ -28,10 +28,24 @@ const routes = [
     meta: { requiresLogin: true },
   },
   {
-    name: "create.artistas",
-    path: "/artistas-create",
+    name: "index.canciones",
+    path: "/canciones",
     component: () =>
-    import ("@/views/artistas/CreateComponent"),
+    import ("@/views/canciones/IndexComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "create.canciones",
+    path: "/canciones-create",
+    component: () =>
+    import ("@/views/canciones/CreateComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "edit.canciones",
+    path: "/canciones-edit/:id_cancion",
+    component: () =>
+    import ("@/views/canciones/EditComponent"),
     meta: { requiresLogin: true },
   },
   

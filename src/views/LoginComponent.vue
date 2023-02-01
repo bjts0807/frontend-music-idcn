@@ -9,7 +9,7 @@
                   <div class="sign-user_card ">
                      <div class="d-flex justify-content-center">
                         <div class="sign-user_logo">
-                           <img src="images/login/user.png" class=" img-fluid" alt="Logo">
+                           <img src="../assets/logo.png" class=" img-fluid" alt="Logo">
                         </div>
                      </div>
                      <div class="sign-in-page-data">
@@ -36,24 +36,19 @@
                 </div>
                               </div>
                               <div class="sign-info">
-                                 <button type="submit" class="btn btn-primary mb-2">Sign in</button>
-                                 <span class="dark-color d-block line-height-2">Don't have an account? <a href="sign-up.html">Sign up</a></span>
+                                 <button type="submit" class="btn btn-primary mb-2">Acceder</button>
+                                 
                               </div>
-                              <div class="d-inline-block w-100">
-                                 <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember Me</label>
-                                 </div>
-                              </div>
+                              
                            </form>
                         </div>
                      </div>
                      <div class="mt-2">
                         <div class="d-flex justify-content-center links">
-                           Don't have an account? <a href="sign-up.html" class="ml-2">Sign Up</a>
+                           Power By <a href="sign-up.html" class="ml-2">Brayan Torres</a>
                         </div>
                         <div class="d-flex justify-content-center links">
-                           <a href="pages-recoverpw.html">Forgot your password?</a>
+                          MAOE Versión 1.0
                         </div>
                      </div>
                   </div>

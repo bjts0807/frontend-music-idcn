@@ -7,9 +7,10 @@
     
     <div id="content-page" class="content-page">
       <router-view />
+      <FooterComponent />
     </div>
 
-    <FooterComponent />
+    
 
     
   </div>

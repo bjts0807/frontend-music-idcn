@@ -1,11 +1,10 @@
 <template>
-<div class="">
     <div class="iq-card  iq-mb-3">
-         <div class="iq-card-header d-flex justify-content-between">
-                           <div class="iq-header-title">
-                              <h4 class="card-title">Artistas</h4>
-                           </div>
-                        </div>
+        <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+                <h4 class="card-title">Artistas</h4>
+            </div>
+        </div>
         <div class="iq-card-body">
             <data-grid :data="pagination"
                 @changePage="changePage($event)"
@@ -17,11 +16,12 @@
                         <grid-cell-header class="bg-light"  v-for="(h,i) in headers" :key="`h_${i}`">{{h}}</grid-cell-header>
                     </template>
                     <template #body>
-                        <grid-row v-for="(item, i) in pagination.data" :key="`d_${i}`">
-                        
+                        <grid-row v-for="(item, i) in pagination.data" :key="`d_${i}`">                        
                             <grid-cell class=" small">
-                            <img class="rounded img-fluid avatar-40 mx-2" src="images/user/01.jpg" alt="profile">
-                                {{item.nombre}}
+                                <div class="iq-thumb-hotsong">
+                                    <img src="images/dashboard/album-song/01.png" class="img-fluid avatar-50 mx-2" alt="">
+                                    {{item.nombre}}                                   
+                                </div>                            
                             </grid-cell>
                             <grid-cell class="text-center   ">
                                 <div class=" ">
@@ -46,7 +46,6 @@
             <modal-artista ref="modalArtistas" v-on:get-artistas="getArtistas"></modal-artista>
         </div>
     </div>
-</div>
 </template>
 <script>
     
@@ -58,12 +57,11 @@ import GridCell from "../../components/utilities/DataGrid/GridCell";
 import artistaService from "../../services/artistaService";
 import modalArtista from "./ModalArtista";
 import Swal from "sweetalert2";
-//import {isEmpty} from "lodash";
-//import dayjs from 'dayjs';
 
 export default {
-  components:{
-     GridCell, GridRow, GridCellHeader, GridTable, DataGrid,modalArtista  },
+    components:{
+       GridCell, GridRow, GridCellHeader, GridTable, DataGrid,modalArtista  
+    },
   data(){
     return {
         headers : [
@@ -93,11 +91,12 @@ export default {
         }catch (e) {
             console.error(e);
             this.LoaderSpinnerHide(); 
-            Swal.fire("Oops!", "ha ocurrido un error al procesar la solicitud", "error");
-            /* Toast.fire({
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Ha ocurrido un error al procesar la solicitud',
                 icon: 'error',
-                title: 'Ocurrio un error al procesar la solicitud'
-            }); */
+                confirmButtonColor: '#ff4545'
+            })
         }
     },
     changePage(page) {
@@ -120,10 +119,6 @@ export default {
     openModalEdit(id){
         this.$refs.modalArtistas.edit(id);
     },
-   /*  yearMember(date){
-        if(isEmpty(date)) return 0;
-        return dayjs().diff(date,'year');
-    }, */
   },
   async created(){
     await this.getArtistas();

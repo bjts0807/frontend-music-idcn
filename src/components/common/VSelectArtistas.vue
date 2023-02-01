@@ -1,9 +1,9 @@
 <template>
   <v-select
     label="text"
-    :options="members"
+    :options="artistas"
     v-model="selected"
-    :reduce="member => mode === 'object' ? member : member.id"
+    :reduce="artista => mode === 'object' ? artista : artista.id"
     @search="debounceSearch"
     @input="setChange"
     :class="classObject"
@@ -19,21 +19,22 @@
 
 <script>
 import {debounce} from 'lodash';
-import VSelect from 'vue-select';
-import membersService from "./../../services/membersService";
+import VSelect  from "vue-select";
+//import VSelect from 'vue-select';
+import artistaService from "./../../services/artistaService";
 
 export default {
   props: ["value", "mode", "validator"],
   components : {VSelect},
   data() {
     return {
-      members: [],
+      artistas: [],
       selected: this.value,
       search: "",
     };
   },
   created() {
-    this.debounceSearch = debounce(this.buscarMember, 300);
+    this.debounceSearch = debounce(this.buscarArtista, 300);
   },
   watch: {
     value: {
@@ -42,41 +43,41 @@ export default {
 
           if (this.mode === "object") {
 
-            let find = this.members.find(x=> x.id === newValue.id);
+            let find = this.artistas.find(x=> x.id === newValue.id);
 
             if(find !== undefined && find !== null){
                 this.selected = newValue;
                 return;
             }
 
-            membersService.getMemberByName(newValue.id)
+            artistaService.getArtistaByName(newValue.id)
               .then((response) => {
-                let member = {
-                  ID: response.data.id,
-                  text: `${response.data.first_name} ${response.data.second_name} ${response.data.first_surname} ${response.data.second_surname}`,
+                let artista = {
+                  id: response.data.id,
+                  text: `${response.data.nombre}`,
                 };
-                this.members.push(member);
-                this.selected = member;
+                this.artistas.push(artista);
+                this.selected = artista;
               })
               .catch((error) => {
                 console.error(error);
               });
           } else {
 
-            let find = this.members.find(x=> x.id === newValue);
+            let find = this.artistas.find(x=> x.id === newValue);
 
             if(find !== undefined && find !== null){
                 this.selected = newValue;
                 return;
             }
 
-            membersService.getMemberByName(newValue)
+            artistaService.getArtistaByName(newValue)
               .then((response) => {
-                let member = {
-                  ID: response.data.id,
-                  text: `${response.data.first_name} ${response.data.second_name} ${response.data.first_surname} ${response.data.second_surname}`,
+                let artista = {
+                  id: response.data.id,
+                  text: `${response.data.nombre}`,
                 };
-                this.members.push(member);
+                this.artistas.push(artista);
                 this.selected = newValue;
               })
               .catch((error) => {
@@ -89,29 +90,20 @@ export default {
     },
   },
   methods: {
-    async buscarMember(search, loading) {
+    async buscarArtista(search, loading) {
       if (search === "") {
         return;
       }
       try {
         loading(true);
-        const response = await membersService.dataSource(`?s=${escape(search)}`);
-        this.members = response.data.results;
+        const response = await artistaService.dataSource(`?s=${escape(search)}`);
+        this.artistas = response.data.results;
         loading(false);
       } catch (error) {
         loading(false);
         alert("Ocurrio un error, por favor intente nuevamente");
       }
-      
-     
-      /* Axios.get(`${this.data_sources_member.member}?s=${escape(search)}`)
-        .then((response) => {
-          this.members = response.data.results;
-          loading(false);
-        })
-        .catch(() => {
-          
-        }); */
+    
     },
     setChange(value) {
       this.$emit("input", value);

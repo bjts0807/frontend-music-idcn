@@ -7,6 +7,7 @@ import AppLayout from "./layouts/AppLayout";
 import BlankLayout from "./layouts/BlankLayout";
 import {  mapState } from "vuex";
 import Loading from "./components/Loading";
+import 'vue-select/dist/vue-select.css';
 export default {
   name: 'App',
   components: {

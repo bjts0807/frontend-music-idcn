@@ -9,9 +9,9 @@
                   </div>
                   <div class="iq-navbar-logo d-flex justify-content-between">
                      <a href="index.html" class="header-logo">
-                        <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
+                        <img src="../../assets/logo.png" class="img-fluid rounded-normal" alt="Logo">
                         <div class="pt-2 pl-2 logo-title">
-                           <span class="text-primary text-uppercase">Muzik</span>
+                           <span class="text-primary text-uppercase">MAOE</span>
                         </div>
                      </a>
                   </div>
@@ -21,167 +21,13 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="list-unstyled iq-menu-top d-flex justify-content-between mb-0 p-0">
-                     <li class="active"><a href="index.html">Home</a></li>
-                     <li><a href="latest.html">Latest</a></li>
-                     <li><a href="albums.html">Albums</a></li>
+                     <li class="active">App para administrar Canciones</li>
+
                   </ul>
                   <ul class="navbar-nav ml-auto navbar-list">
                      <li class="nav-item nav-icon">
                         <div class="iq-search-bar">
-                           <form action="#" class="searchbox">
-                              <input type="text" class="text search-input" placeholder="Search Here..">
-                              <a class="search-link" href="#"><i class="ri-search-line text-black"></i></a>
-                              <a class="search-audio" href="#"><i class="las la-microphone text-black"></i></a>
-                           </form>
-                        </div>
-                     </li>
-                     <li class="nav-item nav-icon search-content">
-                        <a href="#" class="search-toggle iq-waves-effect text-gray rounded"><span class="ripple rippleEffect " ></span>
-                           <i class="ri-search-line text-black"></i>
-                        </a>
-                        <form action="#" class="search-box p-0">
-                           <input type="text" class="text search-input" placeholder="Type here to search...">
-                           <a class="search-link" href="#"><i class="ri-search-line text-black"></i></a>
-                           <a class="search-audio" href="#"><i class="las la-microphone text-black"></i></a>
-                        </form>
-                     </li>
-                     <li class="nav-item nav-icon">
-                        <a href="#" class="search-toggle iq-waves-effect text-black rounded">
-                           <i class="las la-cog"></i>
-                           <span class=" dots"></span>
-                        </a>
-                     </li>
-                     <li class="nav-item nav-icon">
-                        <a href="#" class="search-toggle iq-waves-effect text-black rounded">
-                           <i class="lar la-envelope"></i>
-                           <span class="massage-icon dots badge badge-primary">5</span>
-                        </a>
-                        <div class="iq-sub-dropdown">
-                           <div class="iq-card shadow-none m-0">
-                              <div class="iq-card-body p-0 ">
-                                 <div class="bg-primary p-3">
-                                    <h5 class="mb-0 text-white">All Messages<small class="badge  badge-light float-right pt-1">5</small></h5>
-                                 </div>
-                                 <a href="#" class="iq-sub-card">
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Bni Emma Watson</h6>
-                                          <small class="float-left font-size-12">13 Jun</small>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card">
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
-                                          <small class="float-left font-size-12">20 Apr</small>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card">
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Why do we use it?</h6>
-                                          <small class="float-left font-size-12">30 Jun</small>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card">
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Variations Passages</h6>
-                                          <small class="float-left font-size-12">12 Sep</small>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card">
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded" src="images/user/05.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Lorem Ipsum generators</h6>
-                                          <small class="float-left font-size-12">5 Dec</small>
-                                       </div>
-                                    </div>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="nav-item nav-icon">
-                        <a href="#" class="search-toggle iq-waves-effect text-black rounded">
-                           <i class="ri-notification-line block"></i>
-                           <span class="notice-icon dots badge badge-primary">+</span>
-                        </a>
-                        <div class="iq-sub-dropdown">
-                           <div class="iq-card shadow-none m-0">
-                              <div class="iq-card-body p-0">
-                                 <div class="bg-primary p-3">
-                                    <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
-                                 </div>
-                                 <a href="#" class="iq-sub-card" >
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded img-fluid" src="images/user/01.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Emma Watson Barry</h6>
-                                          <small class="float-right">Just Now</small>
-                                          <p class="mb-0">95 MB</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card" >
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded img-fluid" src="images/user/02.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">New customer is join</h6>
-                                          <small class="float-right">5 days ago</small>
-                                          <p class="mb-0">Cyst Barry</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card" >
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded img-fluid" src="images/user/03.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Two customer is left</h6>
-                                          <small class="float-right">2 days ago</small>
-                                          <p class="mb-0">Cyst Barry</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="#" class="iq-sub-card" >
-                                    <div class="media align-items-center">
-                                       <div class="">
-                                          <img class="avatar-40 rounded img-fluid" src="images/user/04.jpg" alt="">
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">New Mail from Fenny</h6>
-                                          <small class="float-right">3 days ago</small>
-                                          <p class="mb-0">Cyst Barry</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                              </div>
-                           </div>
+                           Ministerio de Alabanza OBED-EDOM <span class="text-primary">(MAOE)</span>
                         </div>
                      </li>
                      <li class="line-height pt-3">
@@ -201,46 +47,13 @@
                                           <i class="ri-file-user-line"></i>
                                        </div>
                                        <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">My Profile</h6>
-                                          <p class="mb-0 font-size-12">View personal profile details.</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
-                                    <div class="media align-items-center">
-                                       <div class="rounded iq-card-icon iq-bg-primary">
-                                          <i class="ri-profile-line"></i>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Edit Profile</h6>
-                                          <p class="mb-0 font-size-12">Modify your personal details.</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
-                                    <div class="media align-items-center">
-                                       <div class="rounded iq-card-icon iq-bg-primary">
-                                          <i class="ri-account-box-line"></i>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Account settings</h6>
-                                          <p class="mb-0 font-size-12">Manage your account parameters.</p>
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
-                                    <div class="media align-items-center">
-                                       <div class="rounded iq-card-icon iq-bg-primary">
-                                          <i class="ri-lock-line"></i>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 ">Privacy Settings</h6>
-                                          <p class="mb-0 font-size-12">Control your privacy parameters.</p>
+                                          <h6 class="mb-0 ">Mi Perfil</h6>
+                                          <p class="mb-0 font-size-12">Ver detalles.</p>
                                        </div>
                                     </div>
                                  </a>
                                  <div class="d-inline-block w-100 text-center p-3">
-                                    <a class="bg-primary iq-sign-btn" @click="logout();" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                    <a class="bg-primary iq-sign-btn " @click="logout();" role="button">Salir<i class="ri-login-box-line ml-2"></i></a>
                                  </div>
                               </div>
                            </div>
@@ -271,7 +84,7 @@ export default {
           text : "",
           showCancelButton : true,
           showConfirmButton : true,
-          confirmButtonColor: "#1a73e8",
+          confirmButtonColor: "#ff4545",
           confirmButtonText : 'Sí, finalizar',
           cancelButtonText : 'No',
           icon : "warning",
@@ -281,12 +94,21 @@ export default {
              await store.dispatch('logout')
             }catch (e) {
               console.error(e);
-              Swal.showValidationMessage('ha ocurrido un error al procesar la solicitud');
+               Swal.fire({
+                  title: 'Oops!',
+                  text: 'Ha ocurrido un error al procesar la solicitud',
+                  icon: 'error',
+                  confirmButtonColor: '#ff4545'
+               })
             }
           },
         });
         if(result.isConfirmed){
-          Swal.fire('Exíto', 'Sesión finalizada con exíto', 'success');
+          Swal.fire({
+            text: 'Sesión finalizada con éxito',
+               icon: 'success',
+               confirmButtonColor: '#ff4545'
+          });
           
         }
       }catch (e) {

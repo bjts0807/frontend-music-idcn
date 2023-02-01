@@ -28,7 +28,7 @@ appInstance.use(Loading);
 appInstance.mixin({
     methods: {
         LoaderSpinnerShow: function() {
-            this.$options.loader = this.$loading.show({ color: '#0055ff', container: null });
+            this.$options.loader = this.$loading.show({ color: '#ff4545', container: null });
         },
         LoaderSpinnerHide: function() {
 

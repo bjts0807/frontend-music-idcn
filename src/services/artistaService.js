@@ -29,12 +29,12 @@ export default {
     delete(id) {
         return Service.delete(`${baseurl}/delete/${id}`);
     },
-    getMemberByName(name) {
+    getArtistaByName(name) {
         let url = `${baseurl}/get?by=name&name=${name}`;
         return Service.get(url);
     },
     dataSource(search = ''){
-        let url = `${baseurl}/data-source-member${search}`;
+        let url = `${baseurl}/data-source-artista${search}`;
         return Service.get(url);
     }
 }
