@@ -1,5 +1,5 @@
 import Service from "./Service";
-const baseurl = '/api/canciones';
+const baseurl = '/api/repertorio';
 import {isEmpty} from 'lodash';
 //import makeParams from "../utils/functions/makeParams";
 export default {
@@ -59,12 +59,4 @@ export default {
     delete(id) {
         return Service.delete(`${baseurl}/delete/${id}`);
     },
-    getCancionByName(name) {
-        let url = `${baseurl}/get?by=name&name=${name}`;
-        return Service.get(url);
-    },
-    dataSource(search = ''){
-        let url = `${baseurl}/data-source-cancion${search}`;
-        return Service.get(url);
-    }
 }

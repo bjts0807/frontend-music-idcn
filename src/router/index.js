@@ -48,7 +48,41 @@ const routes = [
     import ("@/views/canciones/EditComponent"),
     meta: { requiresLogin: true },
   },
-  
+  {
+    name: "index.miembros",
+    path: "/miembros",
+    component: () =>
+    import ("@/views/miembros/IndexComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "create.repertorio",
+    path: "/repertorio-create",
+    component: () =>
+    import ("@/views/repertorio/CreateComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "index.repertorio",
+    path: "/repertorio",
+    component: () =>
+    import ("@/views/repertorio/IndexComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "edit.repertorio",
+    path: "/repertorio-edit/:id_repertorio",
+    component: () =>
+    import ("@/views/repertorio/EditComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "show.repertorio",
+    path: "/repertorio-show/:id_repertorio",
+    component: () =>
+    import ("@/views/repertorio/ShowComponent"),
+    meta: { requiresLogin: true },
+  },
 ]
 
 const router = createRouter({

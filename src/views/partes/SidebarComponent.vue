@@ -50,6 +50,29 @@
                               <i class="las la-list"></i>Listado
                            </router-link>
                         </li>
+                        <li>
+                           <router-link :to="{name:'create.canciones'}">
+                              <i class="las la-plus"></i> Nuevo
+                           </router-link>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <router-link :to="{name:'index.miembros'}" class="iq-waves-effect"><i class="las la-user iq-arrow-left"></i><span>Miembros</span></router-link>
+                  </li>
+                  <li>
+                     <a href="#repertorio" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="la la-headphones iq-arrow-left"></i><span>Repertorio</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                     <ul id="repertorio" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
+                        <li>
+                           <router-link :to="{name:'index.repertorio'}">
+                              <i class="las la-list"></i>Listado
+                           </router-link>
+                        </li>
+                        <li>
+                           <router-link :to="{name:'create.repertorio'}">
+                              <i class="las la-plus"></i> Nuevo
+                           </router-link>
+                        </li>
                      </ul>
                   </li>
                </ul>
