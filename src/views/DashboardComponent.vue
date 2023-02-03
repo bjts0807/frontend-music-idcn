@@ -12,7 +12,7 @@
                            <div class="iq-map text-primary font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
                               <h2>{{results.total_artistas}}</h2>
-                              <div class="rounded-circle iq-card-icon iq-bg-primary ml-3"> <i class="ri-inbox-fill"></i></div>
+                              <div class="rounded-circle iq-card-icon iq-bg-primary ml-3"> <i class="las la-user-tie"></i></div>
                            </div>
                         </div>
                      </div>
@@ -29,7 +29,7 @@
                            <div class="iq-map text-success font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
                               <h2>{{results.total_canciones}}</h2>
-                              <div class="rounded-circle iq-card-icon iq-bg-success ml-3"><i class="ri-price-tag-3-line"></i></div>
+                              <div class="rounded-circle iq-card-icon iq-bg-success ml-3"><i class="lar la-file-audio"></i></div>
                            </div>
                         </div>
                      </div>
@@ -46,7 +46,7 @@
                            <div class="iq-map text-danger font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
                               <h2>{{results.total_miembros}}</h2>
-                              <div class="rounded-circle iq-card-icon iq-bg-danger ml-3"><i class="ri-radar-line"></i></div>
+                              <div class="rounded-circle iq-card-icon iq-bg-danger ml-3"><i class="la la-user"></i></div>
                            </div>
                         </div>
                      </div>
@@ -63,7 +63,7 @@
                            <div class="iq-map text-info font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
                               <h2>{{results.total_repertorio}}</h2>
-                              <div class="rounded-circle iq-card-icon iq-bg-info ml-3"><i class="ri-refund-line"></i></div>
+                              <div class="rounded-circle iq-card-icon iq-bg-info ml-3"><i class="la la-headphones"></i></div>
                            </div>
                         </div>
                      </div>
