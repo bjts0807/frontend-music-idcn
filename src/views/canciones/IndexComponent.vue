@@ -27,12 +27,12 @@
                                     <button @click="editCancion(item.id);" type="button" class="btn btn-outline-dark rounded-pill mb-1 mx-2" title="Editar">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button type="button" class="btn btn-outline-secondary rounded-pill mb-1 mx-2" title="Ver">
+                                    <!-- <button type="button" class="btn btn-outline-secondary rounded-pill mb-1 mx-2" title="Ver">
                                         <i class="fa fa-eye"></i>
                                     </button>
                                     <button type="button" class="btn btn-outline-danger rounded-pill mb-1 mx-2" title="Eliminar">
                                         <i class="fa fa-trash"></i>
-                                    </button>
+                                    </button> -->
                                 </div>
                             </li>
                         </ul>

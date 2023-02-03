@@ -2,7 +2,7 @@
      <div class="iq-card  iq-mb-3">
          <div class="iq-card-header d-flex justify-content-between">
             <div class="iq-header-title">
-                <h5 class="card-title">Detalle de Repertorio : <span class="text-primary">{{nombre_repertorio}} ({{fecha_ejecucion}})</span></h5>
+                <h5 class="card-title">Detalle de Repertorio : <span class="text-primary">{{nombre_repertorio}} ({{$filters.formatDate(fecha_ejecucion)}})</span></h5>
             </div>
         </div>
         <div class="iq-card-body">
@@ -23,6 +23,7 @@
                                     role="tab"
                                     aria-controls="v-pills-home" 
                                     aria-selected="true">{{item.cancion.text}}
+                                    <p><i class="text-dark font-size-12">{{item.miembro.text}}</i></p>
                                 </a>
                             </div>
                         </div>

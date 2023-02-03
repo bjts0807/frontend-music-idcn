@@ -21,8 +21,8 @@
                                 </div>
                                 <div class="media-support-info ml-3">
                                     <h6 class="text-primary">{{item.nombre}}</h6>
-                                    <p class="mb-0 font-size-12 text-dark">Ensayo: {{item.fecha_ensayo}}</p>
-                                    <p class="mb-0 font-size-12 text-dark">Ejecución: {{item.fecha_ejecucion}}</p>
+                                    <p class="mb-0 font-size-12 text-dark">Ensayo: {{$filters.formatDate(item.fecha_ensayo)}}</p>
+                                    <p class="mb-0 font-size-12 text-dark">Ejecución: {{$filters.formatDate(item.fecha_ejecucion)}}</p>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
                                     <button @click="editRepertorio(item.id);" type="button" class="btn btn-outline-dark rounded-pill mb-1 mx-2" title="Editar">
@@ -31,7 +31,7 @@
                                     <button type="button" @click="showRepertorio(item.id);" class="btn btn-outline-secondary rounded-pill mb-1 mx-2" title="Ver">
                                         <i class="fa fa-eye"></i>
                                     </button>
-                                    <button type="button" class="btn btn-outline-danger rounded-pill mb-1 mx-2" title="Eliminar">
+                                    <button type="button" @click="deleteRepertorio(item.id);" class="btn btn-outline-danger rounded-pill mb-1 mx-2" title="Eliminar">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </div>
@@ -48,39 +48,78 @@
 import DataGrid from "../../components/utilities/DataGrid/DataGrid";
 import repertorioService from "../../services/repertorioService";
 import paginateMixin from "../../mixins/PaginateMixin";
+import Swal from "sweetalert2";
 
 export default {
     components:{
        DataGrid 
     },
     mixins: [paginateMixin(repertorioService)],
-  data(){
-    return {
-        headers : [
-            'Nombre',
-            'Opciones'
-        ],
-    }
-  },
-  methods:{
-    newRepertorio(){
-        this.$router.push({
-            name:'create.repertorio'
-        })
+    data(){
+        return {
+            headers : [
+                'Nombre',
+                'Opciones'
+            ],
+        }
     },
-    editRepertorio(id){
-        this.$router.push({
-            name:'edit.repertorio',
-            params:{id_repertorio:id}
-        })
+    methods:{
+        newRepertorio(){
+            this.$router.push({
+                name:'create.repertorio'
+            })
+        },
+        editRepertorio(id){
+            this.$router.push({
+                name:'edit.repertorio',
+                params:{id_repertorio:id}
+            })
+        },
+        showRepertorio(id){
+            this.$router.push({
+                name:'show.repertorio',
+                params:{id_repertorio:id}
+            })
+        },
+        async deleteRepertorio(id){
+            try{
+                const result = await Swal.fire({
+                title :  "¿Está seguro de eliminar este repertorio ?",
+                text : "",
+                showCancelButton : true,
+                showConfirmButton : true,
+                confirmButtonColor: "#ff4545",
+                confirmButtonText : 'Sí, Eliminar',
+                cancelButtonText : 'No',
+                icon : "warning",
+                showLoaderOnConfirm : true,
+                preConfirm: async () => {
+                    try{
+                        await repertorioService.delete(id)
+                        this.index();
+                    }catch (e) {
+                        console.error(e);
+                        Swal.fire({
+                            title: 'Oops!',
+                            text: 'Ha ocurrido un error al procesar la solicitud',
+                            icon: 'error',
+                            confirmButtonColor: '#ff4545'
+                        })
+                    }
+                },
+                });
+                if(result.isConfirmed){
+                    Swal.fire({
+                        text: 'Datos eliminados éxito',
+                        icon: 'success',
+                        confirmButtonColor: '#ff4545'
+                    });
+                }
+            }catch (e) {
+                console.error(e);
+            }
+        }
     },
-    showRepertorio(id){
-        this.$router.push({
-            name:'show.repertorio',
-            params:{id_repertorio:id}
-        })
-    }
-  },
   created() {
     this.index();
   },

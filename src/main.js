@@ -1,29 +1,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router";
-
-
 import store from "./store";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-
-/* import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { fas } from '@fortawesome/free-solid-svg-icons'
-library.add(fas);
-import { fab } from '@fortawesome/free-brands-svg-icons';
-library.add(fab);
-import { far } from '@fortawesome/free-regular-svg-icons';
-library.add(far);
-import { dom } from "@fortawesome/fontawesome-svg-core"; */
-//dom.watch();
+import moment from "moment";
+import momentjsMixin from "./mixins/momentjs-mixin";
 
 const appInstance = createApp(App);
-//appInstance.component("font-awesome-icon", FontAwesomeIcon);
 appInstance.use(store);
 appInstance.use(router);
 appInstance.mount("#app");
 appInstance.use(Loading);
+appInstance.use(momentjsMixin);
 
 appInstance.mixin({
     methods: {
@@ -36,3 +25,39 @@ appInstance.mixin({
         }
     }
 });
+
+appInstance.config.globalProperties.$filters = {
+    cop_currency(value) {
+        return new Intl.NumberFormat("ES-co", { style: "currency", currency: "COP" }).format(value);
+    },
+
+    cop_currency_no_decimals(value){
+        return new Intl.NumberFormat("Es-co", { style: "currency", currency: "COP", minimumFractionDigits: 0 }).format(value);
+    },
+
+    formatDate(value) {
+        if (value) {
+            return moment(String(value)).format('DD/MM/YYYY');
+        }
+    },
+    
+    formatDateTime(value) {
+        if (value) {
+            return moment(String(value)).format('YYYY/MM/DD hh:mm A');
+        }
+    },
+    
+    time(value) {
+        if (value) {
+            return moment(String(value)).format('hh:mm A');
+        }
+    },
+    
+    pad_left(value) {
+        return value.toString().padStart(3, '0');
+    },
+    
+    truncate(value) {
+        return Number(value).toFixed(2);
+    }
+}
