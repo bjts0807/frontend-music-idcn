@@ -17,7 +17,7 @@
                         <ul class="list-inline">
                             <li class="d-flex mb-3 align-items-center p-3 sell-list border border-light rounded">
                                 <div class="user-img img-fluid">
-                                    <img src="images/user/01.jpg" alt="story-img" class="img-fluid rounded-circle avatar-40">
+                                    <i class="la la-headphones"></i>
                                 </div>
                                 <div class="media-support-info ml-3">
                                     <h6 class="text-primary">{{item.nombre}}</h6>
