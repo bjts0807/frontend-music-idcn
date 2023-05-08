@@ -24,6 +24,7 @@
                                     aria-controls="v-pills-home" 
                                     aria-selected="true">{{item.cancion.text}}
                                     <p><i class="text-dark font-size-12">{{item.miembro.text}}</i></p>
+                                    <button class="btn btn-info" @click="getChord(1,item.cancion.detalles)">Subir tono</button>
                                 </a>
                             </div>
                         </div>
@@ -43,6 +44,7 @@
                                             <div class="media-support-info ml-3">
                                                 <h6 class="text-primary text-uppercase">{{detalle.nombre}}</h6>
                                                 <p class="mb-0 font-size-12 text-dark"> {{detalle.contenido}}</p>
+                                                
                                             </div>
                                         </li>
                                     </ul>
@@ -58,6 +60,7 @@
 <script>
     import Swal from "sweetalert2";
     import repertorioService from "../../services/repertorioService";
+    //import openAiService from "@/services/openAiService";
     export default {
         data(){
             return {
@@ -66,6 +69,7 @@
                 fecha_ensayo:'',
                 fecha_ejecucion:'',
                 items:[],
+                transposedProgression:[],
             }
         },
         methods: {
@@ -105,6 +109,96 @@
                         confirmButtonColor: '#ff4545'
                     })
                 }
+            },
+            async getChord(semitones,detalle){
+
+                let arrayDetalle=[];
+
+                detalle.forEach((e)=>{
+                    const array = e.contenido.split(' ');
+                    let detalles={
+                        nombre:e.nombre,
+                        contenido:array
+                    }
+                    arrayDetalle.push(detalles);
+                });
+
+                console.log(arrayDetalle);
+
+                arrayDetalle.forEach((e)=>{
+                    const transposedChords = e.contenido.map((chord) => {
+                        const chordInfo = this.getChordInfo(chord);
+                        if (chordInfo) {
+                            const index = chordInfo.index;
+                            const isMajor = chordInfo.type === 'major';
+                            const isMinor = chordInfo.type === 'minor';
+                            const newIndex = (index + semitones) % 12;
+                            const newChord = this.getChordByIndex(newIndex);
+                            if (isMajor) {
+                                return newChord;
+                            } else if (isMinor) {
+                                return newChord + 'm';
+                            } else {
+                                return chord;
+                            }
+                        }
+                        return chord;
+                    }); 
+                    let newDetalles={
+                        nombre:e.nombre,
+                        contenido:transposedChords
+                    }
+                    this.transposedProgression = newDetalles;
+                    console.log(newDetalles);
+                })
+            },
+            transposeChords(semitones,detalle) {
+                let arrayDetalle=[];
+                const array = detalle.split(' ');
+                arrayDetalle = array;
+                const transposedChords = arrayDetalle.map((chord) => {
+                    const chordInfo = this.getChordInfo(chord);
+                    if (chordInfo) {
+                        const index = chordInfo.index;
+                        const isMajor = chordInfo.type === 'major';
+                        const isMinor = chordInfo.type === 'minor';
+                        const newIndex = (index + semitones) % 12;
+                        const newChord = this.getChordByIndex(newIndex);
+                        if (isMajor) {
+                            return newChord;
+                        } else if (isMinor) {
+                            return newChord + 'm';
+                        } else {
+                            return chord;
+                        }
+                    }
+                    return chord;
+                });
+                this.transposedProgression = transposedChords;
+                console.log(transposedChords);
+            },
+            getChordInfo(chord) {
+                const chordRegex = /^([A-G][b#]?)(m|M)?/;
+                const matches = chord.match(chordRegex);
+                if (matches) {
+                    const name = matches[1];
+                    const type = matches[2] === 'm' ? 'minor' : 'major';
+                    const index = this.getChordIndex(name);
+                    return {
+                        name,
+                        type,
+                        index,
+                    };
+                }
+                return null;
+            },
+            getChordIndex(chord) {
+                const chords = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+                return chords.indexOf(chord);
+            },
+            getChordByIndex(index) {
+                const chords = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+                return chords[index];
             }
         },
         async created(){
