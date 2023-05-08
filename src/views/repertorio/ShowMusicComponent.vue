@@ -110,7 +110,8 @@ import cancionService from "@/services/cancionService";
                        nombre:det.nombre,
                        contenido:transposedChords
                    }
-                   this.items.push(newDetalles);
+                   this.transposedProgression.push(newDetalles);
+                   this.items=this.transposedProgression;
                })
            },
            getChordInfo(chord) {
