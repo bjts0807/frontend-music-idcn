@@ -83,6 +83,21 @@ const routes = [
     import ("@/views/repertorio/ShowComponent"),
     meta: { requiresLogin: true },
   },
+  {
+    name: "list.musics",
+    path: "/music-show",
+    component: () =>
+    import ("@/views/repertorio/ListMusicsComponent"),
+    meta: { requiresLogin: true },
+  },
+  {
+    name: "show.music",
+    path: "/music-show/:id_music",
+    component: () =>
+    import ("@/views/repertorio/ShowMusicComponent"),
+    meta: { requiresLogin: true },
+  }
+  
 ]
 
 const router = createRouter({
