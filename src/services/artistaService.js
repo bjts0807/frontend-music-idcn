@@ -4,7 +4,7 @@ import {isEmpty} from 'lodash';
 export default {
     
     async index(search = '',pagination = {}) {
-        let url = `${baseurl}/?`;
+        let url = `${baseurl}?`;
 
         url += search !== '' ? `s=${search}` : '';
 
@@ -18,7 +18,7 @@ export default {
         return Service.post(`${baseurl}/store`, obj);
     },
     list() {
-        return Service.get(`${baseurl}/`,);
+        return Service.get(`${baseurl}`,);
     },
     show(id) {
         return Service.get(`${baseurl}/show/${id}`);

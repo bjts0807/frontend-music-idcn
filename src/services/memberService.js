@@ -4,7 +4,7 @@ import {isEmpty} from 'lodash';
 export default {
     
     async index(search = '',pagination = {}) {
-        let url = `${baseurl}/?`;
+        let url = `${baseurl}?`;
 
         url += search !== '' ? `s=${search}` : '';
 

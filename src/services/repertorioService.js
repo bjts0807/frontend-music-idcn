@@ -48,7 +48,7 @@ export default {
         return Service.post(`${baseurl}/store`, obj);
     },
     list() {
-        return Service.get(`${baseurl}/`,);
+        return Service.get(`${baseurl}`,);
     },
     show(id) {
         return Service.get(`${baseurl}/show/${id}`);
