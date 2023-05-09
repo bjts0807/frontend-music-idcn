@@ -55,6 +55,11 @@
                               <i class="las la-plus"></i> Nuevo
                            </router-link>
                         </li>
+                        <li>
+                           <router-link :to="{name:'list.musics'}">
+                              <i class="las la-eye"></i> Canciones del día
+                           </router-link>
+                        </li>
                      </ul>
                   </li>
                   <li>

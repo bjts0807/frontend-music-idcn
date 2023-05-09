@@ -32,7 +32,7 @@
                      </li>
                      <li class="line-height pt-3">
                         <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                           <img src="images/user/11.png" class="img-fluid rounded-circle" alt="user">
+                           <img src="images/user/usuario.png" class="img-fluid rounded-circle" alt="user">
                         </a>
                         <div class="iq-sub-dropdown iq-user-dropdown">
                            <div class="iq-card shadow-none m-0">
@@ -41,7 +41,7 @@
                                     <h5 class="mb-0 text-white line-height" v-if="this.$store.state.user">{{this.$store.state.user.name}}</h5>
                                     <span class="text-white font-size-12" v-if="this.$store.state.user">{{this.$store.state.user.email}}</span>
                                  </div>
-                                 <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                 <a href="" class="iq-sub-card iq-bg-primary-hover">
                                     <div class="media align-items-center">
                                        <div class="rounded iq-card-icon iq-bg-primary">
                                           <i class="ri-file-user-line"></i>

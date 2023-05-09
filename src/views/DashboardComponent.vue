@@ -80,7 +80,9 @@
                   <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                      <div class="iq-card-header d-flex justify-content-between">
                         <div class="iq-header-title">
-                           <h4 class="card-title">Canciones del día</h4>
+                           <router-link :to="{name:'list.musics'}" class="btn btn-danger">
+                              <i class="fa fa-arrow-circle-right"></i> Canciones del día
+                           </router-link>
                         </div>
                      </div>
                      <div class="iq-card-body">

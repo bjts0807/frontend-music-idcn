@@ -24,7 +24,6 @@
                                     aria-controls="v-pills-home" 
                                     aria-selected="true">{{item.cancion.text}}
                                     <p><i class="text-dark font-size-12">{{item.miembro.text}}</i></p>
-                                    <button class="btn btn-info" @click="getChord(1,item.cancion.detalles)">Subir tono</button>
                                 </a>
                             </div>
                         </div>

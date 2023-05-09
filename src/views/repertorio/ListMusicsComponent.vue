@@ -20,7 +20,7 @@
                                  <p class="mb-0 font-size-12">{{item.miembro.first_name}} {{item.miembro.second_name}} {{item.miembro.first_surname}} {{item.miembro.second_surname}}</p>
                               </div>
                               <div class="iq-card-header-toolbar d-flex align-items-center">
-                                 <button type="button" @click="showMusic(item.cancion.id);" class="btn btn-info rounded-pill mb-1 mx-2" title="Ver">
+                                 <button type="button" @click="showMusic(item.cancion.id);" class="btn btn-danger rounded-pill mb-1 mx-2" title="Ver">
                                      <i class="fa fa-eye"></i>
                                  </button>
                              </div>

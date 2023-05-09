@@ -1,10 +1,10 @@
 <template>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-    <div class="copyright">
+    <div class="copyright col-sm-12">
       &copy; Copyright <strong><span>OBED-EDOM</span></strong>. Todos los derechos reservados
     </div>
-    <div class="credits">
+    <div class="credits col-sm-12">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->

@@ -17,7 +17,7 @@
                         <ul class="list-inline">
                             <li class="d-flex mb-3 align-items-center p-3 sell-list border border-light rounded">
                                 <div class="user-img img-fluid">
-                                    <img src="images/user/01.jpg" alt="story-img" class="img-fluid rounded-circle avatar-40">
+                                    <img :src="`data:image/png;base64,${item.artista.imagen}`" alt="story-img" class="img-fluid rounded-circle avatar-40">
                                 </div>
                                 <div class="media-support-info ml-3">
                                     <h6 class="text-primary">{{item.nombre}}</h6>
@@ -26,6 +26,9 @@
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
                                     <button @click="editCancion(item.id);" type="button" class="btn btn-outline-dark rounded-pill mb-1 mx-2" title="Editar">
                                         <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" @click="showMusic(item.id);" class="btn btn-outline-danger rounded-pill mb-1 mx-2" title="Ver">
+                                        <i class="fa fa-eye"></i>
                                     </button>
                                     <!-- <button type="button" class="btn btn-outline-secondary rounded-pill mb-1 mx-2" title="Ver">
                                         <i class="fa fa-eye"></i>
@@ -90,7 +93,13 @@ export default {
             name:'edit.canciones',
             params:{id_cancion:id}
         })
-    }
+    },
+    showMusic(id){
+        this.$router.push({
+            name:'show.music',
+            params:{id_music:id}
+        })
+    },
   },
   created() {
     this.index();
